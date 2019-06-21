@@ -1,4 +1,4 @@
-import { ListenerMgr } from "../manage/ListenerManager";
+import { ListenerMgr } from "../manager/ListenerManager";
 import BaseUI from "../utils/uikiller/BaseUI";
 import { HttpMgr } from "../net/HttpManage";
 

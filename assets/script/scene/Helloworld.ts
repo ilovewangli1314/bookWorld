@@ -1,7 +1,7 @@
-import BaseUI, { EnumUIPath } from "../Utils/UIKiller/BaseUI";
-import Sequence from "../Utils/Action/Sequence";
-import { TipMgr } from "../Manage/TipManager";
-import { ListenerMgr } from "../Manage/ListenerManager";
+import BaseUI, { EnumUIPath } from "../utils/uikiller/BaseUI";
+import Sequence from "../utils/action/Sequence";
+import { TipMgr } from "../manager/TipManager";
+import { ListenerMgr } from "../manager/ListenerManager";
 
 const { ccclass, property } = cc._decorator;
 

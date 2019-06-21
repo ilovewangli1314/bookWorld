@@ -1,8 +1,8 @@
 
 const { ccclass, property } = cc._decorator;
 import { UIComponent } from "../../Utils/UIKiller/UIComponent";
-import { TipMgr } from "../../Manage/TipManager";
-import { EnumUIPath } from "../../Utils/UIKiller/BaseUI";
+import { TipMgr } from "../../manager/TipManager";
+import { EnumUIPath } from "../../utils/uikiller/BaseUI";
 
 @ccclass
 export default class TipUI extends UIComponent {

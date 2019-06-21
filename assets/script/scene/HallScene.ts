@@ -1,4 +1,4 @@
-import UserInfoModel from "../Data/UserInfoModel";
+import UserInfoModel from "../data/UserInfoModel";
 
 const { ccclass, property } = cc._decorator;
 

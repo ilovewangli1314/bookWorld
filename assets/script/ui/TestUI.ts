@@ -1,7 +1,6 @@
-
 const { ccclass, property } = cc._decorator;
 import { UIComponent } from "../Utils/UIKiller/UIComponent";
-import { TipMgr } from "../Manage/TipManager";
+import { TipMgr } from "../manager/TipManager";
 
 @ccclass
 export default class NewClass extends UIComponent {

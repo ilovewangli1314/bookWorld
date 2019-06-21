@@ -1,7 +1,7 @@
 import { UIComponent } from "../../Utils/UIKiller/UIComponent";
-import { EnumUIPath } from "../../Utils/UIKiller/BaseUI";
-import TipBoxMgr from "../../Manage/TipBoxUIManager";
-import { UIMgr } from "../../Manage/UIManager";
+import { EnumUIPath } from "../../utils/uikiller/BaseUI";
+import TipBoxMgr from "../../manager/TipBoxUIManager";
+import { UIMgr } from "../../manager/UIManager";
 
 export enum TipBoxEnum {
     Ok,

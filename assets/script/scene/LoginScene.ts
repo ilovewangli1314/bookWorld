@@ -1,6 +1,6 @@
-import { TipMgr } from "../Manage/TipManager";
-import { GameInfoModel } from "../Data/GameInfoModel";
-import TipBoxMgr from "../Manage/TipBoxUIManager";
+import { TipMgr } from "../manager/TipManager";
+import { GameInfoModel } from "../data/GameInfoModel";
+import TipBoxMgr from "../manager/TipBoxUIManager";
 import { TipBoxData } from "../UI/Common/TipBoxUI";
 
 const { ccclass, property } = cc._decorator;

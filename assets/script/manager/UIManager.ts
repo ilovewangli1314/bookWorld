@@ -1,4 +1,4 @@
-import BaseUI, { UIClass, UIShowType, UIHideType } from "../Utils/UIKiller/BaseUI";
+import BaseUI, { UIClass, UIShowType, UIHideType } from "../utils/uikiller/BaseUI";
 import { resGetPrefab } from "./ResManager";
 import { TipMgr } from "./TipManager";
 import { PoolPlugin } from "../Utils/UIKiller/PoolPlugin";

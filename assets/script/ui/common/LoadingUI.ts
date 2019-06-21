@@ -1,5 +1,5 @@
 import { UIComponent } from "../../Utils/UIKiller/UIComponent";
-import { EnumUIPath } from "../../Utils/UIKiller/BaseUI";
+import { EnumUIPath } from "../../utils/uikiller/BaseUI";
 
 const { ccclass, property } = cc._decorator;
 

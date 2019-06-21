@@ -1,6 +1,6 @@
-import { UIComponent } from "../../Utils/UIKiller/UIComponent";
-import { observer, render } from "../../Utils/MobX/Observer";
-import UserInfoModel from "../../Data/UserInfoModel";
+import { UIComponent } from "../../utils/uikiller/UIComponent";
+import { observer, render } from "../../utils/mobx/Observer";
+import UserInfoModel from "../../data/UserInfoModel";
 
 const { ccclass, property } = cc._decorator;
 
