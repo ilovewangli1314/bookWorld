@@ -12,11 +12,11 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export class UIComponent extends BaseUI {
 
-    // @property(cc.Boolean)
-    // public debug = false
+    @property(cc.Boolean)
+    public debug = false;
 
     //是否绑定
-    private _bindHammer: boolean = false
+    private _bindHammer: boolean = false;
     //
     private _prefix: string = '_';
     private static _plugins: any[] = [];
@@ -82,10 +82,10 @@ export class UIComponent extends BaseUI {
      * @param {cc.Component} component  要绑定的组件 
      * @param {Object} options          绑定选项
      */
-    public bindComponent(component: cc.Component, options: Object) {
+    public bindComponent(component: cc.Component | any, options: Object) {
         component.$options = options || {};
 
-        let root: cc.Node = component.node;
+        let root: cc.Node | any = component.node;
         root._components.forEach((nodeComponent) => {
             let name = this._getComponentName(nodeComponent);
             name = `$${name}`;
@@ -115,7 +115,7 @@ export class UIComponent extends BaseUI {
         });
     }
 
-    _getToggleEventName(node: cc.Node) {
+    _getToggleEventName(node: cc.Node | any) {
         let name = node.$eventName || node.name;
         if (name) {
             name = name[this._prefix.length].toUpperCase() + name.slice(this._prefix.length + 1);
@@ -128,7 +128,7 @@ export class UIComponent extends BaseUI {
      * 绑定事件 botton
      * @param {cc.Node} node
      */
-    _bindTouchEvent(node: cc.Node, target: cc.Component, defaultNames: string[]) {
+    _bindTouchEvent(node: cc.Node | any, target: cc.Component, defaultNames: string[]) {
         //todo: EditBox 组件不能注册触摸事件,在原生上会导致不能被输入
         if (node.getComponent(cc.EditBox)) {
             return;
@@ -196,7 +196,7 @@ export class UIComponent extends BaseUI {
      * @param {cc.Node} node 
      * @param {String} event 
      */
-    _getTouchEventName(node: cc.Node, event: string) {
+    _getTouchEventName(node: cc.Node | any, event: string) {
         let name = node.$eventName || node.name;
         if (name) {
             name = name[this._prefix.length].toUpperCase() + name.slice(this._prefix.length + 1);
@@ -247,7 +247,7 @@ export class UIComponent extends BaseUI {
      * @param {cc.Node} node
      */
     _bindTouchLongEvent(nodeObject: cc.Node, target) {
-        const node: cc.Node = nodeObject;
+        const node: cc.Node | any = nodeObject;
         const eventName = this._getTouchEventName(node, 'TouchLong')[0];
         const touchLong = target[eventName];
         //如果没有事件，返回
@@ -278,8 +278,8 @@ export class UIComponent extends BaseUI {
      * @param {cc.Node} nodeObject 
      * @param {Object} target 
      */
-    _bindNode(nodeObject: cc.Node, target: cc.Component) {
-        const node = nodeObject;
+    _bindNode(nodeObject: cc.Node, target: cc.Component | any) {
+        const node: cc.Node | any = nodeObject;
         let isBindNode = false;
         //绑定组件到自身node节点上
         if (node.name[0] === this._prefix) {

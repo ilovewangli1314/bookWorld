@@ -1,4 +1,3 @@
-
 /**
  * 通过资源实例化预制对象
  * @param res   资源字符串
@@ -19,7 +18,6 @@ cc['createPrefab'] = function (res: string, cb: Function) {
     });
 }
 
-
 /**
  * 通过资源路径（预制）创建节点, 根据 sender 类型并完成节点挂接
  * @param sender
@@ -28,7 +26,7 @@ cc['createPrefab'] = function (res: string, cb: Function) {
  */
 cc.Component.prototype['createNode'] = function (sender: cc.Node, res: string, cb: Function) {
     cc.log(`createNode ${res}`);
-    cc.createPrefab(res, (error, node) => {
+    (cc as any).createPrefab(res, (error, node) => {
         if (sender instanceof cc.Node) {
             sender.addChild(node);
         } else if (this.node && this.node instanceof cc.Node) {
@@ -94,7 +92,7 @@ cc['getSpriteFrameByAtlas'] = function getFrameByAtlas(atlas: string, key: strin
 /**
  * 创建带有自带node的组件
  */
-cc.createNodeComponent = function (componentType: string) {
+(cc as any).createNodeComponent = function (componentType: string) {
     let node = new cc.Node();
     let component = node.addComponent(componentType);
     return component;

@@ -1,9 +1,6 @@
-
-
 export class PoolPlugin {
-
     private scriptName: string;
-    private pool: cc.NodePool;
+    private pool: cc.NodePool | any;
     private prefab: cc.Prefab;
 
     constructor(data) {
@@ -16,7 +13,7 @@ export class PoolPlugin {
         if (this.pool.size() > 0) {
             return this.pool.get();
         } else {
-            let node = cc.instantiate(this.prefab);
+            let node: cc.Node | any = cc.instantiate(this.prefab);
             if (this.scriptName) {
                 node.ui = node.getComponent(this.scriptName);
             }
@@ -45,5 +42,4 @@ export class PoolPlugin {
         }
         this.pool = null;
     }
-
 }
