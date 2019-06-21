@@ -4,6 +4,9 @@ export class Base {
     constructor() {
     }
 
+    /**
+     * @param json Object类型的JSON对象
+     */
     @action
     updateData(json: any) {
         if (typeof json !== 'object') {
@@ -12,7 +15,8 @@ export class Base {
 
         for (const key in json) {
             const value = json[key];
-            if (typeof value === "object") {
+            // Object类型的JSON对象中的非基础类型只有 Array 和 Object，他们的类型字符串都是 'object'
+            if (typeof value === 'object') {
                 continue;
             }
 

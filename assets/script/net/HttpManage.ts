@@ -61,7 +61,8 @@ export class HttpMgr {
         let path = option['path'];
         let data = option['data'] || {};
         let type = option['type'] || 'GET';
-        let url = option['url'] || myG.http_ip;
+        // let url = option['url'] || myG.http_ip;
+        let url = option['url'];
         let onSuccess = option['success'];
         let onError = option['error'];
 

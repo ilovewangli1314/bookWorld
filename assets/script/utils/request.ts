@@ -70,8 +70,7 @@ function request(url: string, data = {}, options: any = {}, timeout = 15000) {
     }
 
     //   const crossDeviceFetch = isIOSApp ? appFetch : window.fetch;
-    const crossDeviceFetch = window.fetch;
-    return withTimeLimit(crossDeviceFetch(url, options), timeout);
+    return withTimeLimit(window.fetch(url, options), timeout);
 }
 
 export default request;

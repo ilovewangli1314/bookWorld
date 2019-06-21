@@ -25,21 +25,22 @@ async function _request(url: string, data: any, options: any) {
     }, options);
     options.headers = Object.assign({ 'Accept': 'application/json' }, options.headers);
 
-    // // 针对同域请求的处理
-    // if (! /^(?:https?:)?\/\//.test(url)) {
-    //     // 相对路径前添加 host
-    //     url = PROCESS_ENV.REACT_APP_API_HOST + url;
+    // 针对同域请求的处理
+    if (! /^(?:https?:)?\/\//.test(url)) {
+        // 相对路径前添加 host
+        // url = PROCESS_ENV.REACT_APP_API_HOST + url;
+        url = 'http://dev.putaoread.top:8091' + url;
 
-    //     // 在同域请求的 header 中添加 access_token
-    //     const token = await storage.getItem('access_token');
-    //     if (token) {
-    //         options.headers = Object.assign({ access_token: token }, options.headers);
-    //     }
-    // }
+        // // 在同域请求的 header 中添加 access_token
+        // const token = await storage.getItem('access_token');
+        // if (token) {
+        //     options.headers = Object.assign({ access_token: token }, options.headers);
+        // }
+    }
 
     //TODO 定义一下httpcode  这块可能也不应该判断httpCode
     return request(url, data, options).then(res => {
-        let delay = Date.now() - timestamp;
+        // let delay = Date.now() - timestamp;
         // if (delay > 1000) { //只统计接口请求大于1秒的
         //     track({
         //         ac: 'nw',
